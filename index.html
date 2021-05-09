@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Calculator</title>
+
+		<!-- Css -->
+		<style>
+body{
+	background-image: linear-gradient(to right,#00d2ff,#3a7bd5);
+}
+table{
+  margin: auto;
+}
+#layout{
+  text-align: center;
+  margin-top: 100px;
+}
+p{
+  font-size: 34px;
+  border: 1px solid black;
+  
+}
+button{
+  font-size: 23px;
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  background
+}
+#equal{
+  width: 100px;
+  height: 50px;
+}
+		</style>
+
+	</head>
+
+	<body>
+
+		<!-- calculator layout -->
+		<div id="layout">
+	        <p id="display"></p>
+		
+		<table>
+			  <tr>
+			    <td><button class="fect" onclick="display.innerHTML = ''">C</button></td>
+			    
+	<td><button class="op" onclick="remove()">»</button></td>
+			    <td><button class="op" onclick="display.innerHTML += '%'">%</button></td>
+			    <td><button onclick="display.innerHTML += '/'" class="op">/</button></td>
+			 </tr>
+			       <tr>
+					<td><button value="9" class="btn" onclick="display.innerHTML += '9'">9</button></td>
+					<td><button value="8" class="btn" onclick="display.innerHTML += '8'">8</button></td>
+					<td><button value="7" class="btn" onclick="display.innerHTML += '7'">7</button></td>
+					<td><button onclick="display.innerHTML += '*'">*</button></td>
+			       </tr>
+				
+				<tr>
+				  <td><button value="5" class="btn" onclick="display.innerHTML += '6'">6</button></td>
+				  <td><button value="3" class="btn" onclick="display.innerHTML += '5'">5</button></td>
+				  <td><button value="4" class="btn" onclick="display.innerHTML += '4'">4</button></td>
+					<td><button onclick="display.innerHTML += '-'"> -</button></td>
+				</tr>
+				<tr>
+				  <td><button value="3" class="btn" onclick="display.innerHTML += '3'">3</button></td>
+				  <td><button value="2" class="btn" onclick="display.innerHTML += '2'">2</button></td>
+				  <td><button value="1" onclick="display.innerHTML += '1'">1</button> </td>
+				  <td><button onclick="display.innerHTML += '+'">+</button></td>
+				  </tr>
+				  <tr>
+				    
+					<td><button onclick="display.innerHTML += '0'">0</button></td>
+					<td><button onclick="display.innerHTML += '.'">.</button></td>
+					<td colspan="2"><button id="equal" onclick="cal()">=</button></td>
+				</tr>
+				
+	</table>
+		</div>
+		<script>
+var display = document.getElementById("display");
+var btn = document.getElementsByClassName("btn");
+
+var equal =document.getElementById("equal");
+var result;
+var lol
+function cal(){
+ result = eval(display.innerHTML);
+ display.innerHTML = result;
+ if (result == 69){
+   display.innerHTML += "  OMG!"
+ }
+}
+
+function remove(){
+  
+  lol = display.innerHTML.slice(0,display.innerHTML.length -1);
+  display.innerHTML = lol;
+}
+		</script>
+	</body>
+</html>
